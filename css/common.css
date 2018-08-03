@@ -1,0 +1,94 @@
+/*
+* @Author: Marte
+* @Date:   2018-06-20 21:30:13
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-06-23 23:03:06
+*/
+/* 初始化样式 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0;}
+html, body { margin: 0; padding: 0; height: 100%; }
+table { border-collapse: collapse; border-spacing: 0; }
+a { color: #555; text-decoration: none; }
+fieldset, abbr, acronym { border: 0; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal;}
+img { border: none; vertical-align: middle; }
+ol, ul, li { list-style: none; }
+input, textarea, select, button { font: 14px "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block;}
+/*  清除浮动 */
+.clr:before,
+.clr:after { content: ""; display: block; width: 0; height: 0; visibility: hidden; clear: both;}
+/* IE 6/7 */
+.clr { zoom: 1;}
+
+/* Demo style */
+body { background-color: #ddd; font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif; font-size: 15px; font-weight: 400; color: #3a2127; overflow-y: scroll;}
+/* 头部 */
+.containter { width: 100%; height: 100%; text-align: center; position: relative;}
+.containter > header { padding: 20px 30px 10px 30px; margin: 0px 20px 10px 20px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);}
+.containter > header > h1 { font-size: 35px; line-height: 35px; font-weight: 400; color: rgba(26, 89, 120, .9); padding-bottom: 5px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);}
+.containter > header > h1 > span { margin-left: 10px; color: #7cbcd6; text-shadow: 0 1px 1px rgba(255, 255, 255, .8);}
+.containter > header > .codrops-demos { padding: 14px;}
+.containter > header > .codrops-demos > a { display: inline-block; width: 60px; height: 60px; border-radius: 50%; margin: 0 5px; font: italic 800 12px/60px arial,sans-serif; color: #fff; background-color: rgba(104, 171, 194, 0.5); box-shadow: 1px 1px 1px rgba(0, 0, 0, .05) inset;}
+.containter > header > .codrops-demos > a.current-demo { background-color: rgba(255, 255, 255, .9); color: rgba(104, 171, 194, 1); box-shadow: 0 1px 1px rgba(0, 0, 0, .1);}
+.containter > header > .codrops-demos > a:not(:first-of-type):hover { background-color: #4fa2c4;}
+/* 页面主体 */
+.cr-container { position: relative; width: 600px; height: 400px; margin: 0 auto; border: 20px solid #fff;}
+.cr-container > input { display: none;}
+.cr-container > label { position: relative; float: left; width: 150px; height: 30px; margin-top: 350px; color: #fff; cursor: pointer; text-align: center; font: italic 24px/32px arial,sans-serif; z-index: 1000;}
+.cr-container > label:before { content: ""; position: absolute; left: 50%; margin-left: -17px; width: 34px; height: 34px; border-radius: 50%; background-color: rgba(130, 195, 217, 0.9); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3); z-index: -1;}
+.cr-container > input:checked + label { color: #68abc2;}
+.cr-container > input:checked + label:before { background-color: #fff; box-shadow: 0 0 0 4px rgba(104, 171, 194, 0.6);}
+/* 实现渐变 */
+.cr-container > label:not(:last-of-type):after { content: ""; position: absolute; width: 1px; height: 400px; right: 0; bottom: -20px;
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255,255,1) 100%);
+   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255,255,1) 100%);
+   background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255,255,1) 100%);
+   filter: progid:DXImageTransform: Microsoft.gradient(startColor="00fffff", endColorstr="#ffffff",GradientType=0);}
+
+ /* 图片部分 */
+ .cr-bgimg { width: 600px; height: 400px; position: absolute; overflow: hidden; left: 0; top: 0; background-repeat: no-repeat; z-index: 1;}
+ .cr-bgimg > div { position: relative; width: 150px; height: 100%; float: left; overflow: hidden;}
+ /* 分辨率在低于768px时 */
+ @media screen and (max-width: 768px) { .containter input{ display: inline; width: 24%; position: relative; margin-top: 350px; z-index: 1000;} .containter label { display: none;}
+}
+/* 实现动画transition */
+.cr-bgimg div span { width: 100%; height: 100%; position: absolute; left: -150px; top: 0; z-index: 2; text-indent: -9999px; background-repeat: no-repeat; -webkit-transition: left 0.5s ease-in-out;    -mos-transition: left 0.5s ease-in-out; -mz-transition: left 0.5s ease-in-out;  -o-transition: left 0.5s ease-in-out; transition: left 0.5s ease-in-out;}
+.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(1) { background: url('../img/1.jpg');}
+.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(2) { background: url('../img/5.jpg');}
+.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(3) { background: url('../img/3.jpg');}
+.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg,
+.cr-bgimg div span:nth-child(4) { background: url('../img/4.jpg');}
+.cr-bgimg div:nth-child(1) span { background-position: 0 0;}
+.cr-bgimg div:nth-child(2) span { background-position: -150px 0;}
+.cr-bgimg div:nth-child(3) span { background-position: -300px 0;}
+.cr-bgimg div:nth-child(4) span { background-position: -450px 0;}
+/* 飘走的盒子animation */
+.cr-container input:checked ~ .cr-bgimg div span { -webkit-animation: slideOut 0.6s ease-in-out;    -moz-animation: slideOut 0.6s ease-in-out; -ms-animation: slideOut 0.6s ease-in-out;  -o-animation: slideOut 0.6s ease-in-out; animation: slideOut 0.6s ease-in-out;}
+@-webkit-keyframes slideOut { 0%{ left: 0;} 100% { left: 150px;}}
+@-moz-keyframes slideOut { 0%{ left: 0;} 100% { left: 150px;}}
+@-ms-keyframes slideOut { 0%{ left: 0;} 100% { left: 150px;}}
+@-o-keyframes slideOut { 0%{ left: 0;} 100% { left: 150px;}}
+@keyframes slideOut { 0%{ left: 0;} 100% { left: 150px;}}
+/* 飘来的盒子 */
+.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg div span:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg div span:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg div span:nth-child(3),
+.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg div span:nth-child(4) { z-index: 10; left: 0; -webkit-animation: none;    -moz-animation: none; -ms-animation: none;  -o-animation: none; animation: none;}
+
+/* 文字部分 */
+.cr-titles h3{ position: absolute; top: 50%; width: 100%; text-align: center; color: #fff; z-index: 1000; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0, .1); opacity: 0; -webkit-transition: opacity 0.8s ease-in-out; -moz-transition: opacity 0.8s ease-in-out; -ms-transition: opacity 0.8s ease-in-out; -o-transition: opacity 0.8s ease-in-out; transition: opacity 0.8s ease-in-out;}
+.cr-titles h3 span:nth-child(1) { display: block; letter-spacing: 7px; font: 70px arial,sans-serif;}
+.cr-titles h3 span:nth-child(2) { display: block; font-size: 14px; padding: 10px; font-style: italic; letter-spacing: 0; background-color: rgba(104, 171, 194, 0.9);}
+
+.cr-container input.cr-selector-img-1:checked ~ .cr-titles h3:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-titles h3:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-titles h3:nth-child(3),
+.cr-container input.cr-selector-img-4:checked ~ .cr-titles h3:nth-child(4) { opacity: 1;}

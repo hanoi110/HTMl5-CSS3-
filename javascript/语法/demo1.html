@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+ <script type="text/javascript">
+    /*var password = prompt("请设置您的密码！");
+    //判断密码的长度，如果不是6位，否则
+    if (password.length < 6) {
+        alert("请输入6位的数字密码");
+    } else {
+        //如果密码是非数字，否则
+        if (isNaN(password)) {
+            alert("密码必须要是数字!");
+        } else {
+            alert("密码设置正确！");
+        }
+    }*/
+    // var str = "abc123";
+    // var num = parseInt(str);
+    // alert(num)
+    // if (num == NaN) {
+    //     alert("NaN");
+    // } else if (num == 123) {
+    //     alert("123");
+    // } else if (typeof num == "number") {
+    //     alert("num");
+    // } else {
+    //     alert("str");
+    // }
+    /*
+    var week = new Date().getDay();
+    var x;
+    // 多条件的判断 switch
+   switch (week) {
+        case 0:
+            x = "天";
+            break;
+        case 1:
+            x = "一";
+            break;
+        case 2:
+            x = "二";
+            break;
+        case 3:
+            x = "三";
+            break;
+        case 4:
+            x = "四";
+            break;
+        case 5:
+            x = "五";
+            break;
+        default:
+            x = "六";
+   }
+    console.log("星期"+ x );*/
+    /*for循环
+    for (var i = 1; i<101 ; i++) {
+        console.log(i);
+    }
+    for (var j = 99 ; j > 0; j--) {
+        document.write(j+"<br />");
+    }
+    for (var m = 1; m < 4; m++) {
+            console.log(m );
+        for (var n = 1; n < 5; n++) {
+            console.log( " " + n);
+        }
+    }*/
+    //求任意一组数的平均值
+    /*function getAvg() {
+        //对多个参数求和
+        var sum = 0,len = arguments.length,i;
+        //循环遍历arguments参数
+        for (i = 0; i < len; i++) {
+           sum += arguments[i];
+        }
+        console.log(sum);
+    }
+    getAvg(55,12,321,654);*/
+
+    /*var colors = new Array("red", "yellow");
+   // if (colors.unshift("blue","blank") === colors.length) {
+   //   console.log(colors);
+   console.log(colors.shift());*/
+
+   //join()
+   var nums = [32,33,4,21,2,10,33,35];
+   var words = ["border", "left", "color"];
+   var wordstr = words.join(); //省略参数默认用逗号隔开
+   var wordto = words.toString();
+   //var wordreverse = words.reverse();
+   // var wordpush = words.pop();
+
+   //sort()可接受一个比较函数作为参数
+   //var wordsort21 = nums.sort(function(a,b){return a<b}); //降序
+   //nums.sort(function(a,b){return a>b}); //升序
+   var wordnum = nums.concat(words,['sad',1,true]);
+   var numslice = nums.slice(0,3);
+   var numscopy = [].concat(nums);
+   var numscopy = nums.slice(0);
+   //var numsplice = nums.splice(2,3,"fx",'asd',true);
+   var numindexOfhanoi = nums.indexOf('33',2);
+  //封装一个indexOf()函数(支持IE678)
+  function ArrayIndexOf(arr, searchvalue, startIndex) {
+    for (var i = startIndex || 0 ; i < arr.length; i++) {
+        if (arr[i] === searchvalue) {
+            return i;
+        }
+    }
+    return -1;
+  }
+
+  var str = "hellopx hanoi 3";
+  var strcharAt = str.charAt(3);
+  var strcharCodeAt = str.charCodeAt(2);
+  var strindexOf = str.indexOf('3');
+  var strslice = str.slice(-5,-1);
+  var strsubstring = str.substring(-1);
+  var strsubstr = str.substr(2,3);
+ //获取扩展名
+ function getFileFormat(url) {
+    return url.slice(url.lastIndexOf('.'));
+ }
+  var strsplit = str.split('px');
+  var strreplace = str.replace(/o$/,'1');
+  var strtoUpperCase = str.toUpperCase();
+  var strtoLowerCase = str.toLowerCase();
+  //封装驼峰形式的函数border-left-color ==> borderLeftColor
+  function camelback(str) {
+    var strsplit = str.split('-');
+    var newStr = strsplit[0];
+    for (var i = 1 ; i < strsplit.length; i++) {
+        newStr += strsplit[i].charAt(0).toUpperCase() + strsplit[i].slice(1);
+    }
+    return newStr;
+  }
+  var str = "border-left-color";
+  //随机生成n~m的整数
+  function randomNum(n, m) {
+    return +Math.floor(Math.random()*(m-n+1)+n);
+  }
+  //求数组的最大值
+var max = Math.max.apply(null,nums);
+
+  //创建一个日期时间对象
+  var today = new Date(),
+  weeks = ["日","一","二","三","四","五","六"],
+  year = today.getFullYear(),
+  month = today.getMonth(),
+  date = today.getDate(),
+  week = today.getDay(),
+  hours = today.getHours(),
+  minutes = today.getMinutes(),
+  seconds = today.getSeconds(),
+  time = year + '年' + month + '月' + date + '日' + hours + '时' + minutes + '分' + seconds + '秒';
+ // console.log("现在是" + time + "  " + "星期" + weeks[week] );
+  
+ </script>
+</body>
+</html>

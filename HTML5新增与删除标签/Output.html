@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>output</title>
+	</head>
+	<body>
+		<form oninput="totalPlace.value=parseInt(price.value)*parseInt(number.value)">
+			<!--type属性为number表示数值型-->
+			<!--type属性为range表示范围-->
+			0<input type="range" id="price" value="5000" />10000
+			*<input type="number" id="number" value="1"/>
+			=<output value="totalPlice" for="price number"></output>
+		</form>
+	</body>
+</html>

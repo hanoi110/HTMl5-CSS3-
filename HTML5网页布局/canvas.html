@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			canvas {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: block;
+				margin: 0 auto;
+				background: #abcdef;
+			}
+		</style>
+		<script type="text/javascript">
+			//window.onload文档加载完后执行相应的javascript语句
+			window.onload = function() {
+				//获取canvas
+				var canvas = document.getElementById("canvas");
+				//设置绘图环境
+				var context = canvas.getContext('2d');
+				
+				//1.描点
+				context.moveTo(100,100);
+				//2.画线
+				context.lineTo(200,200);
+				//3.完成
+				context.stroke()
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="canvas" width="500px" height="400px">
+			你的牛车已经拉不动Canvas这样的高级物品了，还是换台法拉利吧，推荐使用Chrome浏览器！
+		</canvas>
+	</body>
+</html>

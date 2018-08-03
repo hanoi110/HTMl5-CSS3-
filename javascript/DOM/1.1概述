@@ -1,0 +1,17 @@
+1.1概述
+	js是以事件驱动为核心的一门语言。
+1.2事件三要素
+	事件源、事件、事件驱动程序。
+1.2.1事件有哪些
+	onclick鼠标点击
+	ondblclick鼠标双击
+	onkeyup按下并释放键盘上的一个键时触发
+	onchange文本内容或下拉菜单中的选项发生改变
+	onfocus获得焦点，表示文本框等获得鼠标光标
+	onblue失去焦点，表示文本框等失去鼠标光标
+	onmouseover鼠标悬停，即鼠标停留在图片等上方
+	onmouseout鼠标移出，即离开图片等所在的区域
+	onload网页文档加载事件
+	onunload关闭网页时
+	onsubmit表单提交事件
+	onreset表单重置时

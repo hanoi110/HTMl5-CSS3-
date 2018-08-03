@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+    <style type="text/css" >
+        .btn {
+            width: 140px;
+            height: 30px;
+            font: 14px/30px 'Microsoft YaHei';
+            color: #fff;
+            background-color: #00f;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- html事件 -->
+    <!-- <input type="button" value="弹 出" onclick="alert('我是按钮')">
+    <div id="btn" class="btn" onmouseover="onmouseoverFn(this, 'red')" onmouseout="onmouseoutFn(this, 'blue')">
+        开始
+    </div>
+    <script type="text/javascript">
+        function onmouseoverFn(btn, bgColor) {
+            btn.style.background = bgColor;
+        }
+        function onmouseoutFn(btn, bgColor) {
+            btn.style.background = bgColor;
+        }
+    </script> -->
+
+    <!-- DOM0级事件 -->
+    <div class="btn" id="btn">锁定</div>
+    <script type="text/javascript">
+        //获取按钮
+        var btn = document.getElementById("btn");
+        //给按钮绑定事件
+        btn.onclick = function() {
+            if (this.innerHTML == "锁定" ) {
+                 this.innerHTML = "解锁";
+                 this.style.backgroundColor = "red";
+            } else {
+                this.innerHTML = "锁定";
+                this.style.backgroundColor = "blue";
+            }             
+        }
+
+    </script>
+</body>
+</html>
